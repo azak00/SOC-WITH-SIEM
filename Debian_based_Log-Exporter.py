@@ -3,11 +3,12 @@ import requests
 
 ### Requirement ###
 
-## pip install requests
+## pip install requests ##
 
-## Continuously monitor log file ###
 
-### watch -n 30 sudo python3 Auth_Log_check.py ### run script every 30 sec
+## To Continuously monitor log file ###
+
+###  Run watch -n 30 sudo python3 Auth_Log_check.py ### run script every 30 sec ##
 
 
 
