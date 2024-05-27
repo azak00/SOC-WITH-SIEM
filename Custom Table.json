@@ -1,0 +1,25 @@
+$tableParams = @'
+{
+    "properties": {
+        "schema": {
+               "name": "FAILED_SSH_GEO_CL",
+               "columns": [
+        {
+                                "name": "TimeGenerated",
+                                "type": "DateTime"
+                        }, 
+                       {
+                                "name": "RawData",
+                                "type": "String"
+                       },
+                       {
+                                "name": "FilePath",
+                                "type": "String"
+                       },
+              ]
+        }
+    }
+}
+'@
+
+Invoke-AzRestMethod -Path "/subscriptions/xxxxxx/resourcegroups/xxxxxxxxx/providers/microsoft.operationalinsights/workspaces/xxxxx/tables/FAILED_SSH_GEO_CL?api-version=2021-12-01-preview" -Method PUT -payload $tableParams
