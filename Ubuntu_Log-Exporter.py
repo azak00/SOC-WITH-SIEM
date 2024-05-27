@@ -5,7 +5,7 @@ import requests
 
 ## pip install requests
 
-## Continuosly monitor log file ###
+## Continuously monitor log file ###
 
 ### watch -n 30 sudo python3 Auth_Log_check.py ### run script every 30 sec
 
