@@ -12,9 +12,8 @@
 - Azure Virtual Machines
 - Data Connection Endpoint: Connection bridge to receive collected logs and send to log analytics workspace. 
 - Azure Log Analytics Workspaces
-- Data Connection Rule: 
-- Azure Sentinel: Plot map 
-- 
+- Data Connection Rule: Defines where data is collected and transformed and where to send it.
+- Azure Sentinel: Azure SIEM to analyse and visualize logs on a global attack map. 
 
 
 
