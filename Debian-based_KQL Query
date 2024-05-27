@@ -1,0 +1,12 @@
+FAILED_SSH_GEO_CL
+| extend
+    IP = extract(@"IP: ([^,]+)", 1, RawData),
+    Username = extract(@"Username: ([^,]+)", 1, RawData),
+    Latitude = extract(@"Latitude: ([^,]+)", 1, RawData),
+    Longitude = extract(@"Longitude: ([^,]+)", 1, RawData),
+    Country = extract(@"Country: ([^,]+)", 1, RawData),
+    State = extract(@"State: ([^,]+)", 1, RawData),
+    City = extract(@"City: ([^,]+)", 1, RawData)
+| project IP, Username, Latitude, Longitude, Country, State, City
+| where IP != ""
+| summarize event_count = count() by IP, Username, Latitude, Longitude, Country, State, City
