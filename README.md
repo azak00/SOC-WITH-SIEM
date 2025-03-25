@@ -5,15 +5,13 @@ This project demonstrates how to set up a Security Operations Center (SOC) lab u
 
 ### Lab Overview
 
-This SOC lab is built using Azure Sentinel, Log Analytics Workspace, and connected data sources. The architecture includes:
+This SOC setup is built using Azure Sentinel, Log Analytics Workspace, and connected data sources. The architecture includes:
 
-- Azure Sentinel – SIEM for log analysis and threat detection.
-
-- Log Analytics Workspace – Central repository for logs.
-
-- Data Sources – Windows Event Logs, Sysmon, security logs, and custom log exporters.
-
-- Threat Detection & Response – Custom KQL queries and alerting mechanisms.
+- Azure Sentinel – SIEM for log analysis and threat detection, and visualize logs on a global attack map.
+- Data Sources – Windows Event Logs, security logs, and custom log exporters.
+- Data Connection Rule: Defines where data is collected and transformed and where to send it.
+- Data Connection Endpoint: Connection bridge to receive collected logs and send to log analytics workspace. 
+- Log Analytics Workspace – Central repository for custom logs.
 
 #
 
@@ -25,26 +23,22 @@ This SOC lab is built using Azure Sentinel, Log Analytics Workspace, and connect
    - Create an **Azure Log Analytics Workspace**.
    - Navigate to **Microsoft Sentinel** in Azure and connect it to the workspace.
 
-2. **Onboard Log Sources**
-   - Enable **Windows Event Logs & Sysmon**.
-   - Configure **custom log exporters** (`Debian-based_Log_Exporter.py`, `Windows_Log_Exporter.py`).
+2. **Attach Log Sources**
+   - Enable **Windows Event Logs**.
+   - Configure **custom log exporters** (`Windows_Log_Exporter.py`).
+   - Attach custom logs to the **analytics workspace**
 
 3. **Configure Threat Detections**
-   - Create **custom analytics rules** using KQL queries.
-   - Set up **alert policies** to notify on suspicious activity.
-
-## Sample KQL Queries
-- Failed Login Attempts
-- Detecting Brute Force Attacks
+   - Create **custom analytics rules** using KQL queries. [Sample_KQL Query](https://github.com/azak00/SOC-WITH-SIEM/blob/main/Debian-based_KQL%20Query)
 
 ## Dashboards & Alerts
 <img width="800" alt="Failed-RDP2" src="https://github.com/user-attachments/assets/110254d3-b9d1-44ae-a753-9761c6228dc9" />
 
 ## Challenges & Lessons Learned
 
-- What worked well – Log collection, KQL queries.
+- What worked smoothly: Log collection, KQL queries.
 
-- Challenges faced – Log delays, rule fine-tuning.
+- Challenges experienced: Log delays, rule fine-tuning.
 
 - Ongoing improvements – Automating incident response, integrating external threat intelligence.
 
@@ -57,14 +51,14 @@ This SOC lab is built using Azure Sentinel, Log Analytics Workspace, and connect
 
 ## 
 
-### Environment/Tools/Service Used
+
+
+- ### Environment/Tools/Service Used
 
 - Azure Virtual Machines
+- Data Connection Rule: Defines where data is collected and transformed and where to send it.
 - Data Connection Endpoint: Connection bridge to receive collected logs and send to log analytics workspace. 
 - Azure Log Analytics Workspaces
-- Data Connection Rule: Defines where data is collected and transformed and where to send it.
 - Azure Sentinel: Azure SIEM to analyse and visualize logs on a global attack map. 
-
-
 
 
